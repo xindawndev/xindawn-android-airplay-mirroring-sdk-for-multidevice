@@ -1,7 +1,7 @@
 obj
 bin
 gen
-libs/armeabi-v7a
+#libs/armeabi-v7a
 local.properties
 .svn
 .DS_Store
