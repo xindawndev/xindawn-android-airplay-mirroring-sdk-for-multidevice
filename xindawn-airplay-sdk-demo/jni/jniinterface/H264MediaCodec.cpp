@@ -108,10 +108,11 @@ void H264MediaCodec::setSpsPpSData(char *buffer, int buflen)
 	if(m_width != spsWidth  ||  m_height != spsHeight)
 	{
 		DeInitCodec();
-		InitCodec();
 
 		m_width  = spsWidth;
 		m_height = spsHeight;
+		
+		InitCodec();
 
 		LOGI("width = %d height =%d ", m_width,m_height);
 
