@@ -33,6 +33,10 @@ public:
     virtual void onAirPlaySeek(ChannelID channelId,long fPosition) = 0;
     virtual void onAirPlaySetVolume(ChannelID channelId,int volume) = 0;
     virtual void onAirPlayShowPhoto(ChannelID channelId,unsigned char *data, long long size) = 0;
+    virtual long onAirPlayGetDuration(ChannelID channelId) = 0;
+    virtual long onAirPlayGetPosition(ChannelID channelId) = 0;
+    virtual int  onAirPlayIsPlaying(ChannelID channelId) = 0;
+    virtual int  onAirPlayIsPaused(ChannelID channelId) = 0;
 
 };
 

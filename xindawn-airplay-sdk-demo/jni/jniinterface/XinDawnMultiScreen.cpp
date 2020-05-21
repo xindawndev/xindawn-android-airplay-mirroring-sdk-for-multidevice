@@ -233,7 +233,37 @@ void XinDawnMultiScreen::onAirPlayShowPhoto(ChannelID channelId,unsigned char *d
 
 }
 
+long XinDawnMultiScreen::onAirPlayGetDuration(ChannelID channelId)
+{
+	VideoSource* vs = (VideoSource*)channelId;
+	return vs->airplay_getduration((void *)vs);
 
+	printf("=====================%s=========================\n", __FUNCTION__);
+}
+
+long XinDawnMultiScreen::onAirPlayGetPosition(ChannelID channelId)
+{
+	VideoSource* vs = (VideoSource*)channelId;
+	return vs->airplay_getpostion((void *)vs);
+
+	printf("=====================%s=========================\n", __FUNCTION__);
+}
+
+int XinDawnMultiScreen::onAirPlayIsPlaying(ChannelID channelId)
+{
+	VideoSource* vs = (VideoSource*)channelId;
+	return vs->airplay_isplaying((void *)vs);
+
+	printf("=====================%s=========================\n", __FUNCTION__);
+}
+
+int XinDawnMultiScreen::onAirPlayIsPaused(ChannelID channelId)
+{
+	VideoSource* vs = (VideoSource*)channelId;
+	return vs->airplay_ispaused((void *)vs);
+
+	printf("=====================%s=========================\n", __FUNCTION__);
+}
 
 
 void XinDawnMultiScreen::updateState(int cmd,char *deviceip,char *value,char *data)
