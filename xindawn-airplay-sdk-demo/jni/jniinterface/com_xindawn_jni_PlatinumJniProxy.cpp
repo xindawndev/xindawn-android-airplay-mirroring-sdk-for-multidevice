@@ -650,7 +650,7 @@ static jint com_xindawn_jni_PlatinumJniProxy_startMediaRender(JNIEnv* env,jobjec
 	char* pLibPath    = (char *)env->GetStringUTFChars(libpath, NULL);
 	char* pActivecode = (char *)env->GetStringUTFChars(activecode, NULL);
 	LOGI("native get friendname is %s,pActivecode is %s",pFriendname,pActivecode);
-	int ret = XinDawn_StartMediaServer(g_vm,pFriendname,pLibPath,width,height,pActivecode);
+	int ret = XinDawn_StartMediaServer(g_vm,pFriendname,pLibPath,width,height,airtunes_port,airplay_port,pActivecode);
 	LOGI("ret=  %d",ret);
 	env->ReleaseStringUTFChars(activecode,pActivecode);
 	env->ReleaseStringUTFChars(libpath,pLibPath);

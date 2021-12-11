@@ -43,7 +43,7 @@ XinDawnMultiScreen::~XinDawnMultiScreen() {
 
 
 
-int XinDawnMultiScreen::StartAirplay(char *friendname, char *dllpath)
+int XinDawnMultiScreen::StartAirplay(char *friendname, int airtunes_port,int airplay_port,char *dllpath)
 {
 	StopAirplay();
 
@@ -57,7 +57,7 @@ int XinDawnMultiScreen::StartAirplay(char *friendname, char *dllpath)
 	if (!m_pAirplay)
 		return -1;
 
-	m_pAirplay->Init("FF:FF:FF:FF:FF:F2",friendname,dllpath,"","000000000",1920,1080,47027,7027,7127,1,10,10,2);
+	m_pAirplay->Init("FF:FF:FF:FF:FF:F2",friendname,dllpath,"","000000000",1920,1080,airtunes_port,airplay_port,7127,1,10,10,2);
 	m_pAirplay->setAirPlayCallback(this);
 
 
@@ -368,7 +368,7 @@ void XinDawn_StopMediaServer()
 	  }
 }
 
-int  XinDawn_StartMediaServer(JavaVM* JVM,char *friendname, char *dllpath, int width, int height,char *activecode)
+int  XinDawn_StartMediaServer(JavaVM* JVM,char *friendname, char *dllpath, int width, int height,int airtunes_port,int airplay_port,char *activecode)
 {
 	cm = new XinDawnMultiScreen();
 
@@ -378,7 +378,7 @@ int  XinDawn_StartMediaServer(JavaVM* JVM,char *friendname, char *dllpath, int w
     }
 
 
-	cm->StartAirplay(friendname,dllpath);
+	cm->StartAirplay(friendname,airtunes_port,airplay_port,dllpath);
 
 
 	return 0;

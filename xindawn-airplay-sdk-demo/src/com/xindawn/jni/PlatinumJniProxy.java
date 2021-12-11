@@ -11,7 +11,7 @@ import android.view.Surface;
 public class PlatinumJniProxy {
 
     static {
-    		System.loadLibrary("mdnsserver");
+    		//System.loadLibrary("mdnsserver");
     		System.loadLibrary("Shairplay");
 			System.loadLibrary("AirPlay");
         	System.loadLibrary("jniinterface");
@@ -54,14 +54,14 @@ public class PlatinumJniProxy {
     }  
     
     
-    public static  int startMediaRender_Java(String friendname){
+    public static  int startMediaRender_Java(String friendname,int airtunes_port,int airplay_port){
     	if (friendname == null)friendname = "";
     
     	int ret = -1;
     	
     	String objpath = findLibrary1(RenderApplication.getInstance(),"AirPlay");
     
-    	ret = startMediaRender(friendname,objpath,"000000000",1280,720,47000,7000,128*1024,RenderApplication.getInstance());
+    	ret = startMediaRender(friendname,objpath,"000000000",1280,720,airtunes_port,airplay_port,128*1024,RenderApplication.getInstance());
 	
     	return ret;
     }

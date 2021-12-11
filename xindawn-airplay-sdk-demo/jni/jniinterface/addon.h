@@ -13,7 +13,7 @@ extern "C"
 #endif
 void XinDawn_SetVideoSurface(int nId, jobject objSurface);
 void XinDawn_ShutDown(int nId);
-int  XinDawn_StartMediaServer(JavaVM* JVM,char *friendname, char *dllpath, int width, int height, char *activecode);
+int  XinDawn_StartMediaServer(JavaVM* JVM,char *friendname, char *dllpath, int width, int height,int airtunes_port,int airplay_port, char *activecode);
 void XinDawn_StopMediaServer();
 
 #ifdef __cplusplus

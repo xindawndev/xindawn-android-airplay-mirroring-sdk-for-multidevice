@@ -109,8 +109,23 @@ public class DMRWorkThread extends Thread implements IBaseEngine{
 		if (mFriendName.length() == 0){
 			return false;
 		}
+		
+		
+        int p1[] = new int[]{47101};
+        int p2[] = new int[]{7101};
 
-		int ret = PlatinumJniProxy.startMediaRender_Java(mFriendName);
+
+        int ret = CommonUtil.RegisterMyService(mContext, "test", p1, p2);
+        log.e("registerMyService : " +  p1[0] + " " +   p2[0]);
+
+        if(ret <= 0)
+        {
+            return false;
+        }
+
+
+
+		ret = PlatinumJniProxy.startMediaRender_Java(mFriendName,p1[0],p2[0]);
 		boolean result = (ret == 0 ? true : false);
 		mApplication.setDevStatus(result);
 		

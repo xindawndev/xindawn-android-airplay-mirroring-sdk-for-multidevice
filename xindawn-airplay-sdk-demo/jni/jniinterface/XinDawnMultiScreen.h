@@ -63,7 +63,7 @@ public:
 
 //private:
 
-	int StartAirplay(char *friendname, char *dllpath);
+	int StartAirplay(char *friendname, int airtunes_port, int airplay_port, char *dllpath);
 	void StopAirplay();
 	void ShutDown(int nId);
 
