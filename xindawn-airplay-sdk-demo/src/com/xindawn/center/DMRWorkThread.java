@@ -143,6 +143,10 @@ public class DMRWorkThread extends Thread implements IBaseEngine{
 
 	@Override
 	public boolean stopEngine() {
+		
+       CommonUtil.closeMDNS();
+       log.e("close mDNS finish~");
+		
 		PlatinumJniProxy.stopMediaRender();
 		mApplication.setDevStatus(false);
 		return true;
