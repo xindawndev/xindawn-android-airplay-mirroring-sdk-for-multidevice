@@ -56,8 +56,10 @@ int XinDawnMultiScreen::StartAirplay(char *friendname, char *dllpath)
 	m_pAirplay = m_pAirPlayFactory->Create();// new AirPlay();
 	if (!m_pAirplay)
 		return -1;
-
-	m_pAirplay->Init("FF:FF:FF:FF:FF:F2",friendname,dllpath,"","000000000",1920,1080,47027,7027,7127,1,10,10,2);
+	//airplay_mode
+	//0: only mirroring
+	//1: full mode
+	m_pAirplay->Init("FF:FF:FF:FF:FF:F2",friendname,dllpath,"","000000000",0,1920,1080,47027,7027,7127,1,10,10,2);
 	m_pAirplay->setAirPlayCallback(this);
 
 

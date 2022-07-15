@@ -16,6 +16,7 @@ public:
 			char *dllpath,
 			char *password,
 			char *activecode,
+			int  airplay_mode,
 			int  width,
 			int  height,
 	        int  airtunes_port,
@@ -38,5 +39,11 @@ public:
 	virtual void stop() = 0;
 
 	virtual void ShutDown(ChannelID nChannelId) = 0;
+
+	virtual void setVolume(float vol) = 0;
+
+	virtual void setFrameRate(int fps) = 0;
+
+	virtual void setResolution(int  width, int  height) = 0;
 
 };
